@@ -1,0 +1,246 @@
+/* Basic sample */
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: #000000;
+}
+
+body.hide-overflow {
+  overflow: hidden;
+}
+/* helpers */
+
+.t {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.tc {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.rel {
+  position: relative;
+}
+
+/* book */
+
+.book {
+  margin: 0 auto;
+  width: 95%;
+  height: 95%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: visible !important;
+}
+
+/* .book .hard{
+  background-color: #f1e6d2;
+  -webkit-box-shadow:inset 0 0 15px #666;
+  -moz-box-shadow:inset 0 0 15px #666;
+  -o-box-shadow:inset 0 0 15px #666;
+  -ms-box-shadow:inset 0 0 15px #666;
+  box-shadow:inset 0 0 15px #666;
+  font-weight:bold;
+} */
+
+
+.book .page {
+  height: 100%;
+  background-color: #f1e6d2;
+  /* -webkit-box-shadow:inset 0 0 15px #666;
+  -moz-box-shadow:inset 0 0 15px #666;
+  -o-box-shadow:inset 0 0 15px #666;
+  -ms-box-shadow:inset 0 0 15px #666;
+  box-shadow:inset 0 0 15px #666; */
+}
+
+.book .page img {
+  max-width: 100%;
+  height: 100%;
+}
+
+/* .book .odd{
+  background:-webkit-gradient(linear, right top, left top, color-stop(0.95, #FFF), color-stop(1, #DADADA));
+  background-image:-webkit-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image:-moz-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image:-ms-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image:-o-linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  background-image:linear-gradient(right, #FFF 95%, #C4C4C4 100%);
+  -webkit-box-shadow:inset 0 0 5px #666;
+  -moz-box-shadow:inset 0 0 5px #666;
+  -o-box-shadow:inset 0 0 5px #666;
+  -ms-box-shadow:inset 0 0 5px #666;
+  box-shadow:inset 0 0 5px #666;
+}
+
+.book .even{
+  background:-webkit-gradient(linear, left top, right top, color-stop(0.95, #fff), color-stop(1, #dadada));
+  background-image:-webkit-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image:-moz-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image:-ms-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image:-o-linear-gradient(left, #fff 95%, #dadada 100%);
+  background-image:linear-gradient(left, #fff 95%, #dadada 100%);
+  -webkit-box-shadow:inset 0 0 5px #666;
+  -moz-box-shadow:inset 0 0 5px #666;
+  -o-box-shadow:inset 0 0 5px #666;
+  -ms-box-shadow:inset 0 0 5px #666;
+  box-shadow:inset 0 0 5px #666;
+} */
+
+#back_image {
+  margin:0 auto;
+  transition: background-image 1s ease-in-out;
+  background-image: url('pics/app_Corner1.png'), url('pics/web_Back1.png');
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, cover;
+  background-position: bottom right, top left;
+
+}
+
+#copyright {
+  color: #fff;
+  margin-right: 30px;
+  float: right;
+  font-size: 0.75em;
+  font-family: 'arial';
+}
+
+
+@media screen and (orientation: landscape) {
+  #img_cover {
+    background-image: url("../pages/4321-cover.png");
+    background-size: 100% 100% !important;
+  }
+  #img_benefit_1 {
+    background-image: url("../pages/4321-benefit.png");
+    background-size: 100% 100% !important;
+  }
+  #img_benefit_2 {
+    background-image: url("../pages/4321-benefit-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_feature_1 {
+    background-image: url("../pages/4321-feature.png");
+    background-size: 100% 100% !important;
+  }
+  #img_feature_2 {
+    background-image: url("../pages/4321-feature-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_tip_1 {
+    background-image: url("../pages/4321-tip.png");
+    background-size: 100% 100% !important;
+  }
+  #img_tip_2 {
+    background-image: url("../pages/4321-tip-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_release_1 {
+    background-image: url("../pages/4321-release.png");
+    background-size: 100% 100% !important;
+  }
+  #img_release_2 {
+    background-image: url("../pages/4321-release-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_privacy_1 {
+    background-image: url("../pages/4321-privacy.png");
+    background-size: 100% 100% !important;
+  }
+  #img_privacy_2 {
+    background-image: url("../pages/4321-privacy-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_terms_1 {
+    background-image: url("../pages/4321-terms.png");
+    background-size: 100% 100% !important;
+  }
+  #img_terms_2 {
+    background-image: url("../pages/4321-terms-2.png");
+    background-size: 100% 100% !important;
+  }
+  #footer {
+    padding-top: 10px;
+  }
+  #footer-para {
+    text-align: justify;
+    padding: 30px;
+    font-size: 0.65em;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  #img_cover {
+    background-image: url("../pages/4321m-cover.png");
+    background-size: 100% 100% !important;
+  }
+  #img_benefit_1 {
+    background-image: url("../pages/4321m-benefit.png");
+    background-size: 100% 100% !important;
+  }
+  #img_benefit_2 {
+    background-image: url("../pages/4321m-benefit-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_feature_1 {
+    background-image: url("../pages/4321m-feature.png");
+    background-size: 100% 100% !important;
+  }
+  #img_feature_2 {
+    background-image: url("../pages/4321m-feature-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_tip_1 {
+    background-image: url("../pages/4321m-tip.png");
+    background-size: 100% 100% !important;
+  }
+  #img_tip_2 {
+    background-image: url("../pages/4321m-tip-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_release_1 {
+    background-image: url("../pages/4321m-release.png");
+    background-size: 100% 100% !important;
+  }
+  #img_release_2 {
+    background-image: url("../pages/4321m-release-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_privacy_1 {
+    background-image: url("../pages/4321m-privacy.png");
+    background-size: 100% 100% !important;
+  }
+  #img_privacy_2 {
+    background-image: url("../pages/4321m-privacy-2.png");
+    background-size: 100% 100% !important;
+  }
+  #img_terms_1 {
+    background-image: url("../pages/4321m-terms.png");
+    background-size: 100% 100% !important;
+  }
+  #img_terms_2 {
+    background-image: url("../pages/4321m-terms-2.png");
+    background-size: 100% 100% !important;
+  }
+  #footer {
+    padding-top: 10px;
+  }
+  #footer-para {
+    text-align: justify;
+    padding: 30px;
+    font-size: 0.5em;
+  }
+}

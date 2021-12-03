@@ -1,0 +1,286 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<!--<![endif]-->
+
+<html lang="en">
+<link rel="icon" type="image/ico" href="favicon.ico" />
+
+<head>
+    <title>4321 Done | Shared To-do App</title>
+    <meta name="description" content="A shared smartphone to-do list for those who work together">
+    <meta name="author" content="Uday Reddy, uday.iplan@gmail.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="css/basic.css">
+    <script type="text/javascript" src="lib/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="lib/modernizr.2.5.3.min.js"></script>
+    <script type="text/javascript" src="js/basic.js"></script>
+    <script type="text/javascript" src="lib/turn.min.js"></script>
+    <script type="text/javascript" src="lib/hash.js"></script>
+    <script type="text/javascript" src="lib/imageMapResizer.min.js"></script>
+</head>
+
+<body>
+    <div class="t">
+        <div class="tc rel">
+            <div class="book" id="book">
+                <div class="page" id="img_cover">
+                    <img src="pics/triangle_blank.png" alt="4321done - shared to-do app" border="0" width="100%">
+                </div>
+                <div class="page" id="img_benefit_1">
+                    <img src="pics/triangle_blank.png" alt="benefits: simple, intutive" border="0" width="100%">
+                </div>
+                <div class="page" id="img_benefit_2">
+                    <img src="pics/triangle_blank.png" alt="benefits: shared, gets done" border="0" width="100%">
+                </div>
+                <div class="page" id="img_feature_1">
+                    <img src="pics/triangle_blank.png" alt="features: tag, checklist, assign" border="0" width="100%">
+                </div>
+                <div class="page" id="img_feature_2">
+                    <img src="pics/triangle_blank.png" alt="features: group, schedule" border="0" width="100%">
+                </div>
+                <div class="page" id="img_tip_1">
+                    <img src="pics/triangle_blank.png" alt="tips: swipe for options, assign to contacts" border="0" width="100%">
+                </div>
+                <div class="page" id="img_tip_2">
+                    <img src="pics/triangle_blank.png" alt="tips: on-screen tips" border="0" width="100%">
+                </div>
+                <div class="page" id="img_release_1">
+                    <img src="pics/triangle_blank.png" border="0" width="100%" usemap="#map_email">
+                    <map name="map_email">
+                        // href="https://testflight.apple.com/join/UPlLRIuV" 
+                        <area shape=poly coords="250,500, 250,600, 1000,600, 1000,500" 
+                            href="https://apps.apple.com/in/app/4321-done/id1287478310"
+                            alt="install app for iPhone" target="_blank">
+                        <area shape=poly coords="300,600, 300,700, 1250,700, 1250,600" 
+                            href="https://play.google.com/apps/testing/com.done4321.app" 
+                            alt="install app for Android" target="_blank">
+                        <area shape=poly coords="250,900, 250,1050, 1450,1050, 1450,900" 
+                            href="mailto:ideas@4321done.com?cc=uday.iplan@gmail.com&subject=Website%20Request" 
+                            alt="mail to ideas@4321done.com" target="_blank">
+                    </map>
+                </div>
+                <div class="page" id="img_release_2">
+                    <img src="pics/triangle_blank.png" alt="release: coming soon - oauth, push notifications" border="0" width="100%">
+                </div>
+                <div class="page" id="img_privacy_1">
+                    <img src="pics/triangle_blank.png" alt="privacy policy" border="0" width="100%">
+                </div>
+                <div class="page" id="img_privacy_2">
+                    <img src="pics/triangle_blank.png" alt="privacy policy (continued)" border="0" width="100%">
+                </div>
+                <div class="page" id="img_terms_1">
+                    <img src="pics/triangle_blank.png" alt="terms & license" border="0" width="100%">
+                </div>
+                <div class="page" id="img_terms_2">
+                    <img src="pics/triangle_blank.png" alt="terms & license (continued)" border="0" width="100%">
+                </div>
+            </div>
+            <div id="footer">
+                <span id="copyright">&copy; 2017-2021 All rights reserved |
+                    <a style="color:#fff;" href="#page/10">Privacy Policy</a> |
+                    <a style="color:#fff;" href="#page/12">Terms & License</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    function loadApp() {
+
+        // Create the flipbook
+        $('.book').turn({
+            width: 922,
+            height: 650,
+            elevation: 200, // Elevation of the page turn (auto)
+            gradients: true, // Enable gradients during the turn
+            autoCenter: true, // Auto center this flipbook
+            turnCorners: "bl,br", // which corner to turn (auto) 
+        });
+    }
+
+    /*
+     * Turn.js responsive book
+     */
+
+    /*globals window, document, $*/
+
+    (function () {
+        'use strict';
+
+        var module = {
+            init: function (id) {
+                var me = this;
+                var size;
+
+                // if older browser then don't run javascript
+                if (document.addEventListener) {
+                    this.el = document.getElementById(id);
+                    size = this.resize();
+                    this.plugins(size.display);
+
+                    // on window resize, update the plugin size
+                    window.addEventListener('resize', function (e) {
+                        var size = me.resize();
+                        $(me.el).turn('size', size.width, size.height);
+                        $(me.el).turn('display', size.display);
+                    });
+                }
+            },
+
+            resize: function () {
+                // reset the width and height to the css defaults
+                this.el.style.width = '';
+                this.el.style.height = '';
+
+                // the page size is taller for single-page mobile (portrait)
+                var ratio, page;
+                if ((document.body.clientWidth / document.body.clientHeight) > 1) {
+                    ratio = 1.55;
+                    page = "double";
+                } else {
+                    ratio = 0.65;
+                    page = "single";
+                }
+
+                var width = this.el.clientWidth,
+                    height = Math.round(width / ratio),
+                    padded = Math.round(document.body.clientHeight * 0.8); // 10% min margin on either side
+
+                // if the height is too big for the window, constrain it
+                if (height > padded) {
+                    height = padded;
+                    width = Math.round(height * ratio);
+                }
+
+                // set the width and height matching the aspect ratio
+                this.el.style.width = width + 'px';
+                this.el.style.height = height + 'px';
+
+                return {
+                    width: width,
+                    height: height,
+                    display: page
+                };
+            },
+
+            plugins: function (page) {
+                // run the plugin
+                $(this.el).turn({
+                    display: page,
+                    gradients: true,
+                    acceleration: true,
+                    elevation: 200
+                });
+                // hide the body overflow
+                document.body.className = 'hide-overflow';
+            }
+        };
+
+        $('.book').addClass('animated');
+
+        module.init('book');
+    }());
+
+    // Default - Shows a peeling page at the bottom right corner
+    $('.book').turn('peel', 'br');
+
+    // Default - Show first background
+    $('body').css("background-image", "url('pics/triangle_teal.png'), url('pics/doodle_teal.png')");
+    $('body').css("background-repeat", 'no-repeat, no-repeat');
+    $('body').css("background-size", 'contain, cover'); // triangle = contain; background = cover
+    $('body').css("background-position", 'bottom right, top left');
+    $('body').css("transition", 'background-image 1s ease-in-out');  // 1 sec delay to transform
+
+    // refresh on turn
+    $('.book').bind('turning', function (event, page, corner) {
+        Hash.go('page/' + page).update();
+    });
+
+    // URIs
+    Hash.on('^page\/([0-9]*)$', {
+        yep: function (path, parts) {
+            var page = parts[1];
+            if (page !== undefined) {
+                if ($('.book').turn('is'))
+                    $('.book').turn('page', page);
+            }
+        },
+        nop: function (path) {
+            if ($('.book').turn('is'))
+                $('.book').turn('page', 1);
+        }
+    });
+
+    // Arrows keys in browser
+    $(document).keydown(function (e) {
+        var previous = 37, next = 39;
+        switch (e.keyCode) {
+            case previous:
+                $('.book').turn('previous');
+                way = 0;
+                break;
+            case next:
+                $('.book').turn('next');
+                way = 0;
+                break;
+        }
+    });
+
+    // auto turn the book once (4 secs)
+    var myTimer = setInterval(function(){ bookTimer() }, 4000);
+    function bookTimer() {
+        var limit = (matchMedia('all and (orientation:portrait)').matches) ? 9 : 8;
+
+        // *IMPORTANT* - scale image-map for email link on page 8
+        if ($('.book').turn("page") == 8) imageMapResize();
+
+        // turn till the release page then stop the timer
+        if ($('.book').turn("page") < limit) {
+            $('.book').turn("next");
+        } else {
+            $('.book').turn('page', 1);
+            stopTimer();    // stop auto turn
+        }
+    };
+
+    // on each page turn match the color
+    $('.book').bind("turned", function(event, page, view) {
+        var ind;
+
+        //triangle array
+        var triArray = ['pics/triangle_orange.png', 'pics/triangle_green.png', 'pics/triangle_blue.png', 'pics/triangle_magenta.png', 'pics/triangle_teal.png'];
+        triArray.forEach(function(img){
+            // caches images, avoiding flash between background replacements
+            new Image().src = img; 
+        });
+        // background array
+        var bgArray = ['pics/doodle_orange.png', 'pics/doodle_green.png', 'pics/doodle_blue.png', 'pics/doodle_magenta.png', 'pics/doodle_teal.png'];
+        bgArray.forEach(function(img){
+            // caches images, avoiding flash between background replacements
+            new Image().src = img; 
+        });
+
+        // compute the matching triangle/background color for page
+        // other than the active pages - the rest are with the same background
+        ind = (page > 1 && page < 10) ? Math.floor(page / 2) - 1 : 4;
+
+        // update the image
+        $('body').css("background-image", "url('" + triArray[ind] + "'), url('" + bgArray[ind] + "')");
+    });
+
+    function stopTimer() {
+        try {
+            clearInterval(myTimer);
+        } catch (err) { }
+    }
+
+// Load the HTML4 version if there's not CSS transform
+</script>
+
